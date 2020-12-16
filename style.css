@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+#global {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+#info {
+    position: relative;
+    height: 70%;
+    width: 100%;
+    background: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#lettres {
+    display: flex;
+    flex-wrap: wrap;
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+#lettres > div {
+    border: 1px solid black;
+    height: min-content;
+    width: 20%;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#lettres > div:hover {
+    background-color: brown;
+    color: whitesmoke;
+}
+
+#input {
+    position: absolute;
+    bottom: 10%;
+    width: 20%;
+    left: 40%;
+}
+
+#submit {
+    position: absolute;
+    bottom: 5%;
+    width: 20%;
+    left: 40%;
+}
+
+#mot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lettreAffiche {
+    width: 10%;
+    height: 20px;
+    border: 1px solid cadetblue;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 2;
+}
+
+#imagePendu {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 10%;
+    left: 37%;
+    z-index: 1;
+}
+
+#essaiRestant {
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    font-size: 2rem;
+    text-align: center;
+}
+
+#end {
+    position: absolute;
+    display: none;
+    width: 20%;
+    top: 50vh;
+    left: calc(50vw - 10%);
+    background-color: brown;
+    color: whitesmoke;
+    font-size: 3rem;
+    text-align: center;
+}
