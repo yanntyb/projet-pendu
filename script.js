@@ -139,7 +139,6 @@ function initGame(letters,mots){
     initLetter(letters, mot);
     initafficherLettre(mot);
     console.log(mot);
-    console.log(step)
     return mot
 }
 
