@@ -12,6 +12,7 @@ let letters = ["a","b","c","d","e","f", "g","h","i","j","k","l","m","n","o", "p"
 let mots = ["chat","chien","maison","voiture","chaise","lion","fenetre","ordinateur","telephone","clef","abrit","planete","illustration","chemin"]
 
 function afficherImage(step){
+    console.log("step",step)
     let img = document.createElement("img");
     let divImg = document.getElementById("imagePendu");
 
@@ -101,7 +102,7 @@ function tabRandomMot(mots){
 
 function checkLetters(lettre,mot){
     if(mot.includes(lettre)){
-        if(step < 6){
+        if(step < 7){
             let indexLettre = [];
             for(let choixLettre in mot){
                 if(mot[choixLettre] === lettre){
@@ -119,6 +120,7 @@ function checkLetters(lettre,mot){
             divEnd.innerHTML = "PERDU"
             divEnd.style.display = "block"
             initafficherLettre(mot,true);
+            step = 1;
         }
         else{
             step ++;
@@ -130,17 +132,18 @@ function checkLetters(lettre,mot){
     afficherImage(step);
 }
 
-function initGame(letters,mots, step){
-    step = 0;
+function initGame(letters,mots){
+    step = 1;
     afficherImage(step);
     let mot = tabRandomMot(mots);
     initLetter(letters, mot);
     initafficherLettre(mot);
     console.log(mot);
+    console.log(step)
     return mot
 }
 
-let mot = initGame(letters,mots, step)
+let mot = initGame(letters,mots)
 
 buttonInput.addEventListener("click",function (){
     if(input.value.length > 0){
@@ -160,5 +163,5 @@ buttonInput.addEventListener("click",function (){
 
 divEnd.addEventListener("click",function(){
     divEnd.style.display = "none"
-    mot = initGame(letters,mots, step)
+    mot = initGame(letters,mots)
 })
