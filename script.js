@@ -59,13 +59,16 @@ function afficherImage(step){
     }
 }
 
-function initafficherLettre(mot){
+function initafficherLettre(mot, end){
     for(let i = (divMot.children.length - 1); i >= 0; i--){
         console.log(divMot.children[i])
         divMot.removeChild(divMot.children[i]);
     }
     for(let letter in mot){
         let div = document.createElement("div");
+        if(end){
+            div.innerHTML = mot[letter];
+        }
         div.id = letter;
         div.className = "lettreAffiche";
         divMot.appendChild(div);
@@ -115,6 +118,7 @@ function checkLetters(lettre,mot){
         if(step > 6){
             divEnd.innerHTML = "PERDU"
             divEnd.style.display = "block"
+            initafficherLettre(mot,true);
         }
         else{
             step ++;
@@ -127,6 +131,7 @@ function checkLetters(lettre,mot){
 }
 
 function initGame(letters,mots, step){
+    step = 0;
     afficherImage(step);
     let mot = tabRandomMot(mots);
     initLetter(letters, mot);
